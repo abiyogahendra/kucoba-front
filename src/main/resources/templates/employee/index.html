@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+         <table>
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Last Name</td>
+                    <td>Address</td>
+                    <td>Department ID</td>
+                    <td>Department Name</td>
+                    <td> project</td>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr th:each="d : ${employees}">
+                    <td th:text="${d.id}"></td>
+                    <td th:text="${d.name}"></td>
+                    <td th:text="${d.email}"></td>
+                    <td th:text="${d.last_name}"></td>
+                    <td th:text="${d.address}"></td>
+                    <td th:text="${d.department.id}"></td>
+                    <td th:text="${d.department.name}"></td>
+                    <td colspan="4" th:each="project : ${d.projects}">
+                        <span th:text="${project.name}"><span>
+                               <br>
+                        <span th:text="${project.id}"><span>
+                               <br>
+                        <span th:text="${project.lokasi}"><span>
+                               <br>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mii.kucoba.front.controllers;
+package mii.kucoba.front.controllers.employee;
 
 import mii.kucoba.front.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;

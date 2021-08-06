@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mii.kucoba.front.controllers;
+package mii.kucoba.front.controllers.project;
 
 import mii.kucoba.front.models.Project;
 import mii.kucoba.front.service.EmployeeService;
@@ -69,17 +69,6 @@ public class ProjectController {
         return "redirect:/project";
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @GetMapping("/update/{id}")
     public String UpdateProject(Model model, @PathVariable("id") Integer id){
         Project p = projectService.getProjectById(id);
@@ -93,26 +82,6 @@ public class ProjectController {
         projectService.updateDataProject(id,project);
         return "redirect:/project";
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     @GetMapping("/delete/{id}")
     public String postDataProject(@PathVariable("id") Integer id){

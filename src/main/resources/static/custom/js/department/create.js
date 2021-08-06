@@ -33,7 +33,6 @@ function postCreateDepartment(){
     
 }
 
-
 function updateModal(id){
     $.ajax({
         url : '/department/update-modal/' + id,
@@ -62,13 +61,7 @@ function postUpdateDepartment(id){
             dataType : 'json',
             success : function(e){
                 if(e.code == 200){
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: e.response,
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
+                    succesAlert(e.message);
                     $('.modal').modal('hide');
                 }
             },
@@ -86,4 +79,20 @@ function postUpdateDepartment(id){
     }else{
         $('.needs-validation').addClass("was-validated")
     }
+}
+
+function deleteDepartment(id){
+    $.ajax({
+        url : 'department/delete/'+id,
+        dataType : 'json',
+        type : 'delete',
+        success : function (e){
+            if(e.code == 200){
+                succesAlert(e.message);
+                data.ajax.reload( null, false );
+            }
+        },error: (e)=>{
+            errorAlert("Terjadi Error Mohon Hubungi Pengembang");
+        }
+    })
 }

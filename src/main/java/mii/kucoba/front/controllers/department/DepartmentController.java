@@ -12,6 +12,7 @@ import mii.kucoba.front.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -68,10 +69,10 @@ public class DepartmentController {
         return new ReturnMessage("done",200);
     }
     
-    @GetMapping("/delete/{id}")
-    public String postDataDeleteDepartment(@PathVariable("id") Integer id){
+    @DeleteMapping("/delete/{id}")
+    public @ResponseBody ReturnMessage postDataDeleteDepartment(@PathVariable("id") Integer id){
         departmentService.deleteDataDepartment(id);
-        return "redirect:/department";
+        return new ReturnMessage("done",200);
     }
     
     

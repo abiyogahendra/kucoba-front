@@ -1,3 +1,7 @@
+$(document).ready(function (e){
+  $('.active').removeClass('active');
+  $('#side-department').addClass('active');
+})
 var data = $('#table_department').DataTable({
     ajax : {
         url : 'http://localhost:8085/department',

@@ -17,3 +17,16 @@ function errorAlert(message){
         timer: 1500
     })
 }
+
+function questionAlert(question, confirmText, action) {
+    Swal.fire({
+        title: question,
+        showCancelButton: true,
+        confirmButtonText: `${confirmText}`,
+        icon: 'question'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            action();
+        }
+    });
+}

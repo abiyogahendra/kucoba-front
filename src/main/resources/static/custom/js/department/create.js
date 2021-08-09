@@ -82,17 +82,19 @@ function postUpdateDepartment(id){
 }
 
 function deleteDepartment(id){
-    $.ajax({
-        url : 'department/delete/'+id,
-        dataType : 'json',
-        type : 'delete',
-        success : function (e){
-            if(e.code == 200){
-                succesAlert(e.message);
-                data.ajax.reload( null, false );
+    questionAlert("Data dengan id : "+id+" akan terhapus", "Hapus", ()=>{
+        $.ajax({
+            url : 'department/delete/'+id,
+            dataType : 'json',
+            type : 'delete',
+            success : function (e){
+                if(e.code == 200){
+                    succesAlert(e.message);
+                    data.ajax.reload( null, false );
+                }
+            },error: (e)=>{
+                errorAlert("Terjadi Error Mohon Hubungi Pengembang");
             }
-        },error: (e)=>{
-            errorAlert("Terjadi Error Mohon Hubungi Pengembang");
-        }
-    })
+        })
+    });
 }

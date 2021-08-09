@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:include="layout/master :: head_master">
+    <title id="title">Employee</title>
+    <code class="data-header" id="data-header">
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    </code>
+</head>
+<body>
+    <div class="page-wrapper" th:insert="layout/master :: main_layout">
+        <div class="main" id="main">
+            <!-- Button trigger modal -->
+            <div class="container">
+                <div class="card">
+                    <div class="card-header bg-dark text-white">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="text-white">Employee Data</h3>
+                            <button type="button" class="btn btn-primary" onclick="createEmployee()">
+                                Add Employee
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped table-bordered" style="width:100%" id="table_employee">
+                            <thead>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>Name</td>
+                                    <td>Last Name</td>
+                                    <td>Email</td>
+                                    <td>Address</td>
+                                    <td>Department Name</td>
+                                    <td>Action</td>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="data-script" id="data-script">
+            <script>
+                    $(document).ready( function () {
+                        $('.table').DataTable();
+                    });
+            </script>
+           <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script> 
+           <script src="/custom/js/alert.js"></script> 
+           <script src="/custom/js/employee/create.js"></script> 
+           <script src="/custom/js/employee/employee.js"></script> 
+           <script src="/custom/js/validation-bootsrap.js"></script> 
+        </div>
+    </div>
+</body>
+</html>

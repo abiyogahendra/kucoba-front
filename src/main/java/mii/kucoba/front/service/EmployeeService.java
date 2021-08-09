@@ -39,4 +39,9 @@ public class EmployeeService {
         return res.getBody();
     }
     
+    public Employee getById(Integer id){
+        ResponseEntity<Employee> emp = restTemplate.getForEntity(baseUrl + "/" + id, Employee.class);
+        return emp.getBody();
+    }
+    
 }

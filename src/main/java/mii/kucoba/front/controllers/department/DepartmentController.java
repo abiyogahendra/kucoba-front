@@ -51,7 +51,7 @@ public class DepartmentController {
     
     
     @PostMapping("/add")
-    public @ResponseBody Department postDataDepartmentData(@ModelAttribute("dept") Department department){
+    public @ResponseBody Department postDataDepartmentData(Department department){
         departmentService.createDataDepartment(department);
         return department;
     }
